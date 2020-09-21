@@ -1,0 +1,33 @@
+<div class="buttons-container">
+    <a href="/">
+        <button class="btn white">
+            < back to forecast</button>
+    </a>
+    <a href="/add-city">
+        <button class="btn blue-gradient add-city">
+            <span>+ add a city</span>
+        </button>
+    </a>
+</div>
+
+{{!-- <div class="container"> --}}
+<ul class="cities-list">
+    {{#each cities}}
+    <a class="favorite-city" href="/update-city/{{this._id}}">
+        <li class="city-item">
+            <div class="city-info">
+                <i class="location-icon" data-feather="map-pin"></i>
+                <span>{{this.name}}, {{this.country}}</span>
+                {{!-- <img src={{this.image}} alt="img"> --}}
+            </div>
+            <div class="action-container">
+                <a class="action" href="/favorites/{{this._id}}/delete">
+                    <i class="action-icon" data-feather="x"></i>
+                </a>
+            </div>
+        </li>
+    </a>
+    {{/each}}
+</ul>
+
+{{!-- </div> --}}
