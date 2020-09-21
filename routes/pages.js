@@ -28,14 +28,14 @@ router.get("/favorites/:id/delete", async (req, res, next) => {
 });
 
 router.post("/add-city", uploader.single("image"), async (req, res, next) => {
-  const newImage = req.body;
+  const city = req.body;
   console.log(req.file);
   if (req.file) {
-    newImage.image = req.file.path;
+    // can use an image (need to add it to the form)
+    city.image = req.file.path;
   }
   try {
-    // pass newImage to Citymodel.create to use the image
-    const dbResult = await CityModel.create();
+    const dbResult = await CityModel.create(city);
     res.redirect("/favorites");
   } catch (dbError) {
     next(dbError);
