@@ -49,16 +49,12 @@ router.get("/add-city", (req, res) => {
   });
 });
 
-// router.post("/add-city", uploader.single("image"), async (req, res, next) => {
-//   console.log(req.body);
-//   try {
-//     const dbResult = await CityModel.create(newImage);
-//     console.log(dbResult)
-//     res.redirect("/favorites");
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+router.get("/favorites/:name", (req, res, next) => {
+  city = `${req.params.name}`;
+  res.render("home", { 
+    city, 
+    title: "WEATHER APP" });
+});
 
 router.get("/update-city/:id", (req, res, next) => {
   CityModel.findById(req.params.id)

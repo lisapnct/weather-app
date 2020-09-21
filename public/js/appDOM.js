@@ -111,11 +111,13 @@ function displayWeatherIcon(condition) {
 }
 
 weatherForm.addEventListener("submit", (event) => {
+  console.log("submit form");
   event.preventDefault();
   constructURL();
 });
 
 window.onload = () => {
-  const locationApi = `${fetchWeather}?address=Paris`;
-  fetchWeatherAPI(locationApi);
+  // weatherForm.submit();
+  // const locationApi = `${fetchWeather}?address=Paris`;
+  // fetchWeatherAPI(locationApi);
 };
