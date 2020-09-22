@@ -117,7 +117,6 @@ weatherForm.addEventListener("submit", (event) => {
 });
 
 window.onload = () => {
-  // weatherForm.submit();
-  // const locationApi = `${fetchWeather}?address=Paris`;
-  // fetchWeatherAPI(locationApi);
+  constructURL();
+
 };

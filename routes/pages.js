@@ -29,7 +29,7 @@ router.get("/favorites/:id/delete", async (req, res, next) => {
 
 router.post("/add-city", uploader.single("image"), async (req, res, next) => {
   const city = req.body;
-  console.log(req.file);
+  // console.log(req.file);
   if (req.file) {
     // can use an image (need to add it to the form)
     city.image = req.file.path;
@@ -56,6 +56,8 @@ router.get("/favorites/:name", (req, res, next) => {
     title: "WEATHER APP" });
 });
 
+
+// UPDATE ROUTES NOT USED FOR NOW > NEED TO CREATE AN EDIT ICON TO LINK IT
 router.get("/update-city/:id", (req, res, next) => {
   CityModel.findById(req.params.id)
     .then((city) => {
