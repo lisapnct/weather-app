@@ -118,5 +118,4 @@ weatherForm.addEventListener("submit", (event) => {
 
 window.onload = () => {
   constructURL();
-
 };

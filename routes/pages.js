@@ -57,6 +57,12 @@ router.get("/favorites/:name", (req, res, next) => {
 });
 
 
+router.get("favorites/city/:name", (req, res, next) => {
+  newFavorite = `${req.params.name}`;
+  console.log(newFavorite);
+})
+
+
 // UPDATE ROUTES NOT USED FOR NOW > NEED TO CREATE AN EDIT ICON TO LINK IT
 router.get("/update-city/:id", (req, res, next) => {
   CityModel.findById(req.params.id)
