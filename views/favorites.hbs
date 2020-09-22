@@ -1,3 +1,5 @@
+<p id="instructions">click on any city below to see weather forecast</p>
+
 <div class="buttons-container">
     <a href="/">
         <button class="btn white">
@@ -20,7 +22,11 @@
                 <span>{{this.name}}, {{this.country}}</span>
                 {{!-- <img src={{this.image}} alt="img"> --}}
             </div>
+
             <div class="action-container">
+                <a class="action" href="/update-city/{{this._id}}">
+                    <i class="action-icon" data-feather="edit-2"></i>
+                </a>
                 <a class="action" href="/favorites/{{this._id}}/delete">
                     <i class="action-icon" data-feather="x"></i>
                 </a>

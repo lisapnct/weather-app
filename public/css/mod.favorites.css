@@ -95,7 +95,9 @@
 
 .action-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  width: 20%;
+
 }
 
 .action-icon {
@@ -103,4 +105,10 @@
   height: 1.8em;
   width: auto;
   color: white;
+}
+
+#instructions {
+  color: white;
+  text-align: center;
+  font-weight: lighter;
 }
