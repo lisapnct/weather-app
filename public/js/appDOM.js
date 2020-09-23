@@ -14,6 +14,7 @@ const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
 const sunrise = document.getElementById("sunrise");
 const sunset = document.getElementById("sunset");
+const favBtn = document.getElementById("add-favorite");
 
 //DISPLAY DATE
 const months = [
@@ -43,6 +44,15 @@ dayName.textContent = `${days[new Date().getDay()]}`;
 fullDate.textContent = `${new Date().getDate()}, ${
   months[new Date().getMonth()]
 } ${new Date().getFullYear()}`;
+
+function addToFavorite() {
+  const inputValue = document.getElementById("input-city").value;
+  if (inputValue === "") {
+    return;
+  } else {
+    axios.post("/add-city", { name: inputValue });
+  }
+}
 
 function constructURL() {
   cityName.textContent = "Loading...";
@@ -115,6 +125,8 @@ weatherForm.addEventListener("submit", (event) => {
   event.preventDefault();
   constructURL();
 });
+
+favBtn.addEventListener("click", addToFavorite);
 
 window.onload = () => {
   constructURL();

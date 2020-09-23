@@ -35,7 +35,7 @@ router.post("/add-city", uploader.single("image"), async (req, res, next) => {
     city.image = req.file.path;
   }
   try {
-    const dbResult = await CityModel.create(city);
+    await CityModel.create(city);
     res.redirect("/favorites");
   } catch (dbError) {
     next(dbError);
@@ -51,17 +51,16 @@ router.get("/add-city", (req, res) => {
 
 router.get("/favorites/:name", (req, res, next) => {
   city = `${req.params.name}`;
-  res.render("home", { 
-    city, 
-    title: "WEATHER APP" });
+  res.render("home", {
+    city,
+    title: "WEATHER APP",
+  });
 });
-
 
 router.get("favorites/city/:name", (req, res, next) => {
   newFavorite = `${req.params.name}`;
   console.log(newFavorite);
-})
-
+});
 
 // UPDATE ROUTES NOT USED FOR NOW > NEED TO CREATE AN EDIT ICON TO LINK IT
 router.get("/update-city/:id", (req, res, next) => {

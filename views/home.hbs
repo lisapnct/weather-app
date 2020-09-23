@@ -1,8 +1,8 @@
 <form id="location-form" class="searchbar">
     {{#if city}}
-    <input placeholder="ex: Paris, Bangkok, Sao Paulo..." type="text" class="location-input" value={{city}}>
+    <input id="input-city" placeholder="ex: Paris, Bangkok, Sao Paulo..." type="text" class="location-input" value={{city}}>
     {{else}}
-    <input placeholder="ex: Paris, Bangkok, Sao Paulo..." type="text" class="location-input" value="Paris">
+    <input id="input-city" placeholder="ex: Paris, Bangkok, Sao Paulo..." type="text" class="location-input" value="Paris">
     {{/if}}
     <a href=""><button class="search-btn">search</button></a>
 </form>
